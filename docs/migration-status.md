@@ -56,12 +56,17 @@ The numbers below are a point-in-time snapshot from 2026-04-09, scanning the exi
 
 By DUNE area, the direct declarations break down as: Far Detector and common physics (195), protoDUNE (83, currently in `duneprototypes`), Near Detector (82, mostly `garsoft` with a smaller `dunendlar` share), and core/common code (73).
 
+## How to migrate a module
+
+The Phlex developers' guide, [*Migrating to Phlex*](https://framework-r-d.github.io/phlex-examples/), is the reference for moving an `art` module to Phlex. It works in three stages: separate the algorithm from `art` constructs, extract it into plain functions or classes with explicit inputs and outputs, then bind it to Phlex nodes. Its worked example is LArSoft's `GausHitFinder`, which is also the first de-artify candidate named for the FD TPC chain (see [Existing art/FHiCL workflows](existing-art-workflows.md)). The guide's source is in `migration/doc/` of [Framework-R-D/phlex-examples](https://github.com/Framework-R-D/phlex-examples).
+
 ## Execution tracking
 
 There is no public module-by-module migration tracker yet. For current status on a specific module, repository, or M2 benchmark, ask the Phlex Adoption Working Group. A tracker link will be added here once a public view exists.
 
 ## See also
 
+- [*Migrating to Phlex*](https://framework-r-d.github.io/phlex-examples/): the Phlex developers' art-to-Phlex migration guide
 - [Repositories](repositories.md)
 - [Subsystem workflows](subsystems/index.md)
 - [Ecosystem: dune-xerosere](ecosystem.md)

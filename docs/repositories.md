@@ -12,8 +12,8 @@ The Phlex framework itself is developed under the `Framework-R-D` GitHub organiz
 | [Framework-R-D/phlex-design](https://github.com/Framework-R-D/phlex-design) | Framework-level design documents. |
 | [Framework-R-D/phlex-coding-guidelines](https://github.com/Framework-R-D/phlex-coding-guidelines) | Coding guidelines for Phlex framework and plugin code. |
 | [Framework-R-D/core-software-documents](https://github.com/Framework-R-D/core-software-documents) | Core software design documents underlying the framework. |
-| [Framework-R-D/phlex-examples](https://github.com/Framework-R-D/phlex-examples) | Example Phlex applications and plugins. |
-| [Framework-R-D/phlex-spack-recipes](https://github.com/Framework-R-D/phlex-spack-recipes) | Spack build recipes for Phlex and its dependencies. |
+| [Framework-R-D/phlex-examples](https://github.com/Framework-R-D/phlex-examples) | Example Phlex applications and plugins, and the source of the [*Migrating to Phlex*](https://framework-r-d.github.io/phlex-examples/) guide (`migration/doc/`, worked example in `migration/gauss_hit_finder/`). |
+| [Framework-R-D/phlex-spack-recipes](https://github.com/Framework-R-D/phlex-spack-recipes) | Spack build recipes for Phlex and its dependencies. For DUNE's Spack setup, see the [DUNE Spack Project](https://dune.github.io/dune-spack-project/). |
 
 These repos cover the framework itself: how Phlex works and how to build it. They are not where DUNE-subsystem workflow content belongs, which is the role this repository (`dune-phlex-project`) and the DUNE-org subsystem repos below play instead.
 

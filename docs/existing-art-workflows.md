@@ -35,6 +35,8 @@ As given in Paulucci's talk, the PD-focused view of the same FD sim/reco chain:
 
 Chappell's own prioritization proposal (see the [FD TPC page](subsystems/fd-tpc.md)) names a specific entry point: start at `gaushit` and work outward through `spsolve`, `hitfd`, `pandora`, `pandoracalo`, `pandorapid`, `energyrec*`, using pre-existing `art` files as input. This is the one candidate starting point in the source material that is both concrete (named FHiCL stage, named producers) and chosen to enable early comparison with LArSoft output.
 
+For the migration itself, follow the Phlex developers' [*Migrating to Phlex*](https://framework-r-d.github.io/phlex-examples/) guide. Its worked example is `GausHitFinder`, the module behind the `gaushit` producer, so this entry point matches the guide directly.
+
 Backward compatibility is a validation gate, not yet a demonstrated guarantee. The test must specify the Phlex/FORM version, input-file format, product dictionaries, provenance, and associations needed by the chosen modules. See [I/O, persistence, and associations](io-persistence.md).
 
 The alternative path in the same deck, starting from `generator` and rebuilding the full chain, does not provide that early file-based comparison and was not the presenter's recommendation.
