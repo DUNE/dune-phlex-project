@@ -40,7 +40,7 @@ iso_now_file() { date -u +%Y%m%dT%H%M%SZ; }
 
 ```bash
 log() { echo "[$(iso_now)] $*"; }
-outdir="run_${iso_now_file}"
+outdir="run_$(iso_now_file)"
 ```
 
 ## Current state in EMPHATIC

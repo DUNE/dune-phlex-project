@@ -1,5 +1,7 @@
 # Repositories
 
+Last verified: 2026-08-26. Repository names and content state are time-sensitive and should be rechecked before publication updates.
+
 The Phlex framework itself is developed under the `Framework-R-D` GitHub organization. DUNE-specific subsystem code lives under the `DUNE` organization. As of 2026-08-26, every DUNE-org repo below is code-only, with no narrative documentation of its own, which is exactly the gap this site exists to fill.
 
 ## The framework
@@ -25,7 +27,7 @@ These repos cover the framework itself: how Phlex works and how to build it. The
 | [DUNE/dune-tms-phlex](https://github.com/DUNE/dune-tms-phlex) | TMS (Temporary Muon Spectrometer) Phlex code. |
 | [DUNE/dune-sand](https://github.com/DUNE/dune-sand) | SAND simulation and reconstruction code. |
 
-See [Subsystem workflows: ND sim/reco (ND-LAr+TMS)](subsystems/nd-lar-tms.md), [ND sim/reco (SAND)](subsystems/sand.md), and [ND prototypes](subsystems/nd-prototypes.md) for the workflows these repos are meant to eventually host.
+See [Workflow reference: ND sim/reco (ND-LAr+TMS)](subsystems/nd-lar-tms.md), [ND sim/reco (SAND)](subsystems/sand.md), and [ND prototypes](subsystems/nd-prototypes.md) for the workflows these repos are meant to eventually host.
 
 ## FD subsystem repos (DUNE org)
 
@@ -42,7 +44,7 @@ See [Subsystem workflows: ND sim/reco (ND-LAr+TMS)](subsystems/nd-lar-tms.md), [
 | [DUNE/dune-op-det](https://github.com/DUNE/dune-op-det) | Optical/photon detection system (PDS) code, sim and reco. |
 | [DUNE/dune-iceberg](https://github.com/DUNE/dune-iceberg) | ICEBERG test-stand code. |
 
-See [Subsystem workflows: FD sim/reco (TPC)](subsystems/fd-tpc.md), [FD sim/reco (PDS)](subsystems/fd-pds.md), and [protoDUNE](subsystems/protodune.md).
+See [Workflow reference: FD sim/reco (TPC)](subsystems/fd-tpc.md), [FD sim/reco (PDS)](subsystems/fd-pds.md), and [protoDUNE](subsystems/protodune.md).
 
 ## Shared and core repos (DUNE org)
 
@@ -58,4 +60,4 @@ See [Subsystem workflows: FD sim/reco (TPC)](subsystems/fd-tpc.md), [FD sim/reco
 
 ## Current state
 
-As of 2026-08-26, essentially none of the DUNE-org subsystem repos above have source code pushed yet. They exist as Phlex-ready placeholders: the repo names and org structure are set up in advance of the actual migration work landing in each one. This site's [migration status](migration-status.md) page tracks the broader picture of what has and hasn't moved yet.
+As of the last verification date, essentially none of the DUNE-org workflow repositories above had substantive source code pushed. They existed primarily as Phlex-ready placeholders, with names and organization prepared ahead of migration work. The [milestones and migration scope](migration-status.md) page provides dated program checkpoints and inventory baselines; it does not claim to track live repository progress.

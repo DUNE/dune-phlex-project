@@ -27,7 +27,7 @@ Full photon simulation in GEANT4 is slow. Current mitigation is "fast simulation
 
 ## Missing associations
 
-Explicitly flagged on the source deck: associations between `OpDetWaveforms` and `OpHit`, and between `OpHit` and `OpFlash`, "should exist but it is not there." This is a third independent confirmation of the associations gap, after ND-LAr+TMS and FD-TPC, that the same missing-associations problem shows up regardless of subsystem or detector technology.
+Explicitly flagged on the source deck: associations between `OpDetWaveforms` and `OpHit`, and between `OpHit` and `OpFlash`, "should exist but it is not there." This is another concrete association requirement, specifically about lineage and navigation through the optical reconstruction chain. It is related to, but semantically different from, ND cross-detector matching and the FD-TPC co-indexing examples.
 
 ## Migration recommendation
 

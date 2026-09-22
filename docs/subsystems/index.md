@@ -1,10 +1,10 @@
-# Subsystem workflows
+# Workflow reference
 
-DUNE's Phlex migration spans six detector subsystems: protoDUNE, ND prototypes, ND sim/reco (ND-LAr+TMS), ND sim/reco (SAND), FD sim/reco (TPC), and FD sim/reco (PDS). Each has its own current pre-Phlex production chain, its own data hierarchy, and its own open questions about what a Phlex-native version would look like. This section documents each one from the primary source deck presented to the Phlex Adoption Working Group.
+This section covers six workflow presentations made to the Phlex Adoption Working Group: protoDUNE, ND prototypes, ND sim/reco (ND-LAr+TMS), ND sim/reco (SAND), FD sim/reco (TPC), and FD sim/reco (PDS). These are useful documentation scopes, not six independent detector subsystems or a complete taxonomy of DUNE software.
 
-All six converge on roughly the same eventual hierarchy shape (Run, Subrun, then some form of readout window, then detector-element branches), but they start from different places. ND-LAr+TMS and SAND share an upstream chain (GENIE, edep-sim, spill building) before branching. FD-TPC and FD-PDS split the same long-baseline chain into charge and light halves. protoDUNE and ND prototypes are the two subsystems without a full step-by-step production-chain deck yet, only data-hierarchy discussions.
+The presentations expose recurring roles but do not establish one common hierarchy. ND-LAr+TMS and SAND share an upstream chain (GENIE, edep-sim, spill building) before branching. FD-TPC and FD-PDS are companion views of the same long-baseline chain. protoDUNE and ND prototypes are the two scopes without a full step-by-step production-chain deck, and protoDUNE explicitly introduces a separate simulation Timespan/Origins structure.
 
-See [Hierarchy model](../hierarchy-model.md) for a proposed way to fit all six into one extensible structure, built from what these six decks actually say.
+See [Candidate hierarchy patterns](../hierarchy-model.md) for evidence-qualified data, beam-spill, extended-readout, and simulation topologies.
 
 ## Coverage
 

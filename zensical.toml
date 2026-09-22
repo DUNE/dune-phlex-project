@@ -7,7 +7,7 @@ repo_name = "DUNE/dune-phlex-project"
 
 nav = [
   { "Home" = "index.md" },
-  { "Subsystem workflows" = [
+  { "Workflow reference" = [
       { "Overview" = "subsystems/index.md" },
       { "protoDUNE" = "subsystems/protodune.md" },
       { "ND prototypes" = "subsystems/nd-prototypes.md" },
@@ -17,6 +17,8 @@ nav = [
       { "FD sim/reco: PDS" = "subsystems/fd-pds.md" },
     ] },
   { "Hierarchy model" = "hierarchy-model.md" },
+  { "I/O and associations" = "io-persistence.md" },
+  { "Existing art/FHiCL workflows" = "existing-art-workflows.md" },
   { "Conventions" = [
       { "Overview" = "conventions/index.md" },
       { "Units (CLHEP)" = "conventions/units.md" },
@@ -24,7 +26,8 @@ nav = [
       { "Python" = "conventions/python.md" },
     ] },
   { "Ecosystem: dune-xerosere" = "ecosystem.md" },
-  { "Migration status" = "migration-status.md" },
+  { "Milestones and scope" = "migration-status.md" },
+  { "Coverage and gaps" = "coverage.md" },
   { "Repositories" = "repositories.md" },
   { "Contributing" = "contributing.md" },
 ]

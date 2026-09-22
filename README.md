@@ -2,7 +2,7 @@
 
 Documentation, workflow reference, and conventions for DUNE-facing Phlex work: subsystem workflow decks, a proposed data-hierarchy model, DUNE-specific conventions (units, timestamps, Python), the `dune-xerosere` pathfinder ecosystem, migration status, and the relevant DUNE/Framework-R-D repositories.
 
-Site: [dune.github.io/dune-phlex-project](https://dune.github.io/dune-phlex-project/) (not yet live; this repo is local-only as of 2026-08-26)
+Planned site: [dune.github.io/dune-phlex-project](https://dune.github.io/dune-phlex-project/). Repository and publication status should be confirmed before enabling the deployment workflow.
 
 Built with [Zensical](https://zensical.org), following the same pattern as [`dune-spack-project`](https://github.com/DUNE/dune-spack-project).
 

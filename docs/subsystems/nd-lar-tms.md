@@ -24,7 +24,7 @@ A final transform, marked "unsure" on the source deck, stitches NDLAr tracks and
 
 ## Why this matters for Phlex
 
-The fixed Run/Subrun/Spill structure plus hand-rolled cross-hierarchy stitching is exactly the architectural pain Phlex's data-layer DAG and Window higher-order function are designed to eliminate. Window is Phlex's only higher-order function with no `art` equivalent, purpose-built for cross-cell operations like TMS to NDLAr track stitching. See [Hierarchy model](../hierarchy-model.md) for how this generalizes across the other subsystems.
+Phlex's runtime-defined data-layer DAG can represent the NDLAr and TMS branches without forcing them into one fixed Run/Subrun/Event structure. A Window higher-order function may help an algorithm operate over adjacent data cells, but it is not a general replacement for persistent associations or arbitrary cross-layer relationships. The TMS-to-NDLAr match therefore tests two separate needs: scheduling the matching algorithm with the right inputs, and representing its output relationships persistently through FORM. See [Candidate hierarchy patterns](../hierarchy-model.md) and [I/O, persistence, and associations](../io-persistence.md).
 
 ## Open questions from the source deck
 
@@ -33,5 +33,17 @@ Two candidate migration starting points, floated without a firm recommendation: 
 The deck also raises a recurring Adoption Working Group theme directly: "I struggle to see the larger vision. Is the idea that the whole ND Sim/Reco workflow should be merged into one Phlex workflow? What are the great advantages of using Phlex?" This is a documentation gap more than a technical blocker, and part of the motivation for this site.
 
 Some undocumented in-development stages in the deck were reverse-engineered from the repositories rather than confirmed with the developers directly; treat those details as representative for migration discussion rather than authoritative.
+
+## Reference links
+
+- [`ND_Production`](https://github.com/DUNE/ND_Production)
+- [`larnd-sim`](https://github.com/DUNE/larnd-sim.git), [paper (JINST 18 P04034)](https://iopscience.iop.org/article/10.1088/1748-0221/18/04/P04034)
+- [`h5flow`](https://github.com/DUNE/h5flow)
+- [`tutorial-DUNENDSim`](https://github.com/DUNE/tutorial-DUNENDSim)
+- [2x2 tutorial](https://github.com/DUNE/2x2_sim/wiki/Tutorial-on-running-2x2_sim-Apr2024)
+- [2x2 file data definitions](https://github.com/DUNE/2x2_sim/wiki/File-data-definitions)
+- [`dk2nu` flux format](https://github.com/NuSoftHEP/dk2nu)
+- [CAF `StandardRecord` Doxygen reference](https://dune.github.io/duneanaobj/classcaf_1_1StandardRecord.html)
+- [Example edep-sim run macro](https://github.com/DUNE/ND_Production/blob/main/run-edep-sim/macros/dune-nd.mac)
 
 Source: Knight, Phlex Adoption WG, 2026-08-24.

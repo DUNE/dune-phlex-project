@@ -22,6 +22,6 @@ MC truth follows the same shape as reco2, except particles carry energy depositi
 
 Kumaran's own answer: in principle yes, the same hierarchy is already used for full ND reconstruction and simulation, not just the prototypes. The stated problem is that `ndlar-flow` repeats data products for reference datasets inefficiently. The deck raises, without resolving, whether Phlex could help by connecting data products to each other directly.
 
-This names the same bottleneck as Charlotte Knight's ND-LAr+TMS deck independently, framed as an associations problem, matching the associations gap raised across the other subsystem decks in this documentation.
+This belongs to the same broad association theme as Charlotte Knight's ND-LAr+TMS presentation, but it is not the same requirement. Kumaran raises duplicated reference datasets and product-to-product connections; Knight raises cross-detector matching between independently unfolded NDLAr and TMS branches. Both should inform the association design without assuming one mechanism automatically solves both.
 
 Source: Kumaran, Phlex WG, 2026-06-15.

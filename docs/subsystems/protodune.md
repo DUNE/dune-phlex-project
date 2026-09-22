@@ -2,7 +2,7 @@
 
 Owner: Jake Calcutt. Repos: `dune-pdhd`, `dune-pdsp`, `dune-pdvd` (HD, SP, VD readout variants), `dune-iceberg`, plus the pre-Phlex `protoduneana`, `p3s`, `protodune-metadex`, `protodune_beam`.
 
-protoDUNE has no full step-by-step production-chain deck yet, unlike the other five subsystems. What exists is a data-hierarchy discussion (Calcutt, Phlex Adoption WG, 2026-06-15) that grounds DAQ terminology and documents the current offline object chain.
+protoDUNE has no full step-by-step production-chain deck yet. Four of the other workflow scopes do; ND prototypes likewise has only a short hierarchy overview. What exists for protoDUNE is a data-hierarchy discussion (Calcutt, Phlex Adoption WG, 2026-06-15) that grounds DAQ terminology and documents the current offline object chain.
 
 ## DAQ and TDAQ terminology
 
@@ -40,6 +40,6 @@ Relayed directly: different algorithms require different hierarchy layers, so al
 
 ## Open gap
 
-protoDUNE still needs a full production-chain deck, the way the other five subsystems now have one. The existing deck covers DAQ vocabulary and the offline object chain, but not a step-by-step walkthrough of the current sim/reco pipeline.
+protoDUNE still needs a full production-chain deck, comparable to the four full workflow presentations for ND-LAr/TMS, SAND, FD TPC, and FD PDS. The existing deck covers DAQ vocabulary and the offline object chain, but not a step-by-step walkthrough of the current sim/reco pipeline.
 
 Source: Calcutt, Phlex Adoption WG, 2026-06-15.

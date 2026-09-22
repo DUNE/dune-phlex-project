@@ -4,6 +4,8 @@ title: "Ecosystem: dune-xerosere"
 
 # Ecosystem: dune-xerosere
 
+Status: pathfinder evidence, not a DUNE endorsement. Last verified against the project report and follow-ups from 2026-07-08 to 2026-07-13.
+
 `dune-xerosere` is an umbrella development environment, built by Brett Viren, for growing a DUNE-specific software ecosystem around Phlex. It is the clearest concrete DUNE Phlex adoption effort to date: it wires major DUNE workflow ingredients into Phlex while deliberately keeping packages factored enough that DUNE is not forced into a single monolithic ecosystem decision.
 
 ## Why it exists
@@ -58,6 +60,8 @@ DUNE-specific Phlex payloads currently exist for:
 
 This is a trial, not a DUNE-wide decision. Whether Arrow becomes the recommended in-memory representation for DUNE Phlex work, or stays scoped to the producers and consumers that already use it, is still an open question for the Phlex Adoption Working Group.
 
+The strongest recorded counterargument is that the number of major producers and consumers may be small enough that pairwise converters are manageable. That makes the real evaluation question empirical: for the workflows DUNE expects in 2026-2027, does a shared Arrow schema remove more complexity than it introduces? A middle path remains plausible, using general struct-like products where they work and converters where they do not.
+
 ## Configuration
 
 Configuration is a second major theme in the project. `dune_config` uses Jsonnet to separate detector-specific configuration from job-specific configuration, on both the Phlex and Wire-Cell Toolkit sides. `phlexed` provides a Phlex-plus-Jsonnet command-line tool intended to encourage organized configuration authoring.
@@ -73,6 +77,20 @@ Because `dune-xerosere` exercises real DUNE boundary conditions (DAQ data, Wire-
 
 Features anticipated but not yet available: `resource` support for Wire-Cell wires, non-wire geometry, and online/offline channel maps; `translator` auto-engagement of data converters, replacing today's explicit conversion nodes; and `preserver` support for writing objects outside the older output-module model.
 
+## Open pathfinder work
+
+The source report lists material work still needed before the package graph should be read as a complete DUNE workflow:
+
+- add downstream Wire-Cell reconstruction, including 3D imaging, clustering, and pattern recognition;
+- connect edep-sim output to Wire-Cell drift and detector-simulation input;
+- add FORM-based HDF5 I/O rather than relying on explicit workflow nodes;
+- establish how Arrow objects connect to FORM and ROOT backends;
+- evaluate Arrow against ROOT dictionaries using real producer and consumer counts;
+- decide whether DUNE needs a typed configuration subsystem, schema, or code generation;
+- identify which packages are independently buildable, maintained, tested, and ready for contributors other than the original developer.
+
+A useful adoption artifact would be a package test matrix recording owner, maturity, dependencies, independently reproduced build, supported workflow, and whether the package or design choice is endorsed.
+
 ## How to read this project
 
 `dune-xerosere` is a pathfinder, not a mandate. Its value is in exposing integration pressure early, before DUNE commits to a single Phlex-native ecosystem design. Its package factoring is a feature, not an accident: it lets DUNE adopt useful individual pieces without ratifying every design choice made along the way. Evidence that Phlex can host meaningful DUNE components does not, by itself, mean DUNE should endorse Arrow, HDF5, Jsonnet, or the full package graph as the official development environment. Those remain separate, open decisions for the Phlex Adoption Working Group.
@@ -80,5 +98,11 @@ Features anticipated but not yet available: `resource` support for Wire-Cell wir
 ## See also
 
 - [Hierarchy model](hierarchy-model.md)
+- [I/O, persistence, and associations](io-persistence.md)
 - [Conventions](conventions/index.md)
 - [Subsystem workflows](subsystems/index.md)
+
+## Sources
+
+- Brett Viren, `dune-xerosere` project report and follow-ups, 2026-07-08 to 2026-07-13.
+- [Phlex repository](https://github.com/Framework-R-D/phlex).
