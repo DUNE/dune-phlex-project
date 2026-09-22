@@ -16,7 +16,7 @@ Last verified: 2026-08-26.
 | M6: ND full feature | 2030 | Not yet reached. |
 | M7: ND consolidation | 2031 | Not yet reached. |
 
-The M1 prototype passed an external CDF review in October 2025 with a strongly positive verdict: reviewers cited "clear advantages over existing frameworks," with risks judged "acceptable and mitigable." The prototype was tested on multiple platforms, has Python examples available, and its own documentation was described by reviewers as excellent.
+The M1 prototype passed an external Conceptual Design Review (CDR) in October 2025 with a strongly positive verdict: reviewers cited "clear advantages over existing frameworks," with risks judged "acceptable and mitigable." The prototype was tested on multiple platforms, has Python examples available, and its own documentation was described by reviewers as excellent.
 
 ## Last documented M2 benchmark plan
 
