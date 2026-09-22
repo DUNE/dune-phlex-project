@@ -32,7 +32,7 @@ Baseline: Run to Subrun to Spill to APA. Three extensions proposed for the tempo
 
 Trigger handling is raised as an open question, possibly treated the same way as supernova bursts by searching through trigger records.
 
-This is the first primary-source FD-TPC hierarchy proposal ingested into this documentation. See [Hierarchy model](../hierarchy-model.md) for how it fits alongside the other five subsystems.
+This is the first primary-source FD-TPC hierarchy proposal ingested into this documentation. See [Candidate hierarchy patterns](../hierarchy-model.md) for how the proposal compares with the other workflow presentations.
 
 ## Open problems
 
@@ -40,6 +40,6 @@ This is the first primary-source FD-TPC hierarchy proposal ingested into this do
 - No named Phlex equivalent yet for `art::TriggerResults`.
 - `PointCharge` sits structurally parallel to `SpacePoint` (same length, order, module tag) without an actual `Assn` between them, relying entirely on producers and downstream code to stay in sync. Raised directly as a question of whether these should be separate objects at all.
 - CAFs as a Phlex data layer are flagged but not discussed in this deck.
-- Prioritization proposal: get one basic end-to-end HD 10kt long-baseline workflow working first, since most stages are shared across FD workspaces. Two candidate migration paths from that template: start at `gaushit` and work outward (guarantees backward compatibility with existing ART files, allows early comparison to LArSoft), or start at `generator` and rebuild the full chain in Phlex.
+- Prioritization proposal: get one basic end-to-end HD 10kt long-baseline workflow working first, since most stages are shared across FD workspaces. Two candidate migration paths from that template: start at `gaushit` and work outward, conditional on Phlex/FORM reading the required existing `art` products and relationships, or start at `generator` and rebuild the full chain in Phlex. The first path enables early comparison to LArSoft once that compatibility gate is demonstrated.
 
 Source: Chappell, Phlex Adoption WG, 2026-08-10.

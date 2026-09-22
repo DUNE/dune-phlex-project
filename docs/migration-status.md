@@ -1,4 +1,8 @@
-# Migration status
+# Milestones and migration scope
+
+This page separates three different things: the program milestone ladder, the last documented benchmark plan, and dated estimates of migration scope. It is not a live module-status dashboard.
+
+Last verified: 2026-08-26.
 
 ## Milestone ladder
 
@@ -14,7 +18,25 @@
 
 The M1 prototype passed an external CDF review in October 2025 with a strongly positive verdict: reviewers cited "clear advantages over existing frameworks," with risks judged "acceptable and mitigable." The prototype was tested on multiple platforms, has Python examples available, and its own documentation was described by reviewers as excellent.
 
-## Migration scope: a snapshot
+## Last documented M2 benchmark plan
+
+The June 2026 DPC preparation material recorded the following benchmark state. This is a dated checkpoint, not a claim that the table still represents August progress:
+
+| Benchmark | June 2026 checkpoint |
+|---|---|
+| Multi-platform install and onboarding | Enabled against Phlex 0.1/0.2 |
+| Python providers for basic product types | Enabled against Phlex 0.2 |
+| Multi-layer data access | Enabled against Phlex 0.2 |
+| C++23 build on target platforms | Enabled against Phlex 0.2 |
+| FORM I/O round-trip | Planned for M2 |
+| End-to-end simple FD workflow | Planned for M2 |
+| First migrated algorithm in a Phlex workflow | Planned for M2 |
+| Phlex environment in the `dunesw` release ecosystem | Planned for M2 |
+| CI validation for Phlex-based repositories | Planned for M2 |
+
+An owner-reviewed update is required before using this as the current M2 report.
+
+## Migration scope baseline: 2026-04-09
 
 The numbers below are a point-in-time snapshot from 2026-04-09, scanning the existing `art`/LArSoft plugin inventory across the DUNE org to estimate the scale of the migration. They describe the *starting* scope of the art-to-Phlex migration, not current progress against it, and they will be out of date by the time you read this. Treat them as an order-of-magnitude picture of what's being migrated away from, not a live dashboard.
 
@@ -34,12 +56,18 @@ The numbers below are a point-in-time snapshot from 2026-04-09, scanning the exi
 
 By DUNE area, the direct declarations break down as: Far Detector and common physics (195), protoDUNE (83, currently in `duneprototypes`), Near Detector (82, mostly `garsoft` with a smaller `dunendlar` share), and core/common code (73).
 
-## Live tracking
+## How to migrate a module
 
-Day-to-day migration tracking, module-by-module status, and ownership are not tracked on this site. This page exists to give newcomers the shape of the problem; for current status on a specific module or repo, ask in the Adoption Working Group rather than relying on the snapshot above.
+The Phlex developers' guide, [*Migrating to Phlex*](https://framework-r-d.github.io/phlex-examples/), is the reference for moving an `art` module to Phlex. It works in three stages: separate the algorithm from `art` constructs, extract it into plain functions or classes with explicit inputs and outputs, then bind it to Phlex nodes. Its worked example is LArSoft's `GausHitFinder`, which is also the first de-artify candidate named for the FD TPC chain (see [Existing art/FHiCL workflows](existing-art-workflows.md)). The guide's source is in `migration/doc/` of [Framework-R-D/phlex-examples](https://github.com/Framework-R-D/phlex-examples).
+
+## Execution tracking
+
+There is no public module-by-module migration tracker yet. For current status on a specific module, repository, or M2 benchmark, ask the Phlex Adoption Working Group. A tracker link will be added here once a public view exists.
 
 ## See also
 
+- [*Migrating to Phlex*](https://framework-r-d.github.io/phlex-examples/): the Phlex developers' art-to-Phlex migration guide
 - [Repositories](repositories.md)
 - [Subsystem workflows](subsystems/index.md)
 - [Ecosystem: dune-xerosere](ecosystem.md)
+- [Coverage and known gaps](coverage.md)
