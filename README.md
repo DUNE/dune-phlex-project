@@ -13,6 +13,7 @@ Companion site: [DUNE Spack Project](https://dune.github.io/dune-spack-project/)
 ## Local development
 
 ```bash
+export UV_PROJECT_ENVIRONMENT=~/venvs/dune-phlex-project  # keep the venv out of the repo
 uv sync --locked
 uv run --locked zensical serve
 ```

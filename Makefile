@@ -1,5 +1,8 @@
 .PHONY: install serve build check-public clean
 
+# Keep the virtual environment outside the repository.
+export UV_PROJECT_ENVIRONMENT ?= $(HOME)/venvs/dune-phlex-project
+
 install:
 	uv sync --locked
 

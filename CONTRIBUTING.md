@@ -8,6 +8,7 @@ This site is built with [Zensical](https://zensical.org). Content lives as plain
 curl -LsSf https://astral.sh/uv/install.sh | sh
 git clone <this-repo>
 cd dune-phlex-project
+export UV_PROJECT_ENVIRONMENT=~/venvs/dune-phlex-project  # keep the venv out of the repo
 uv sync --locked
 ```
 
