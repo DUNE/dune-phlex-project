@@ -1,0 +1,11 @@
+[project]
+name = "dune-phlex-project"
+version = "0.1.0"
+description = "Documentation, workflow reference, and conventions for DUNE-facing Phlex work"
+requires-python = ">=3.10"
+dependencies = [
+    "zensical",
+]
+
+[tool.uv]
+package = false
