@@ -1,6 +1,6 @@
 # FD sim/reco: PDS
 
-Owner: Laura Paulucci. Covers the photon detection side of the FD sim/reco chain, deliberately scoped to avoid repeating the TPC side covered in the [companion FD TPC talk](fd-tpc.md).
+Presenter: Laura Paulucci. Covers the photon detection side of the FD sim/reco chain, deliberately scoped to avoid repeating the TPC side covered in the [companion FD TPC talk](fd-tpc.md).
 
 ## Workflow
 

@@ -1,8 +1,8 @@
-# Existing art/FHiCL workflows (today)
+# Existing art/FHiCL workflows
 
-The subsystem pages describe what each chain does. This page is narrower: the literal, runnable FHiCL files and producers as named in the source decks, for identifying concrete de-artify candidates rather than working from module names alone.
+The tables below list FHiCL files and producers from the August 2026 FD workflow presentations. They identify migration candidates; running them requires checking the filenames and dependencies against a specific `dunesw` release.
 
-Only two of the six workflow presentations document complete, runnable art/FHiCL production chains. The remaining presentations either describe non-FHiCL workflows or do not provide enough FHiCL detail to reconstruct the chain, as listed at the bottom of this page.
+Only two of the six workflow presentations list the stages and FHiCL files of art production chains. The remaining presentations either describe non-FHiCL workflows or do not provide enough FHiCL detail to reconstruct the chain, as listed at the bottom of this page.
 
 ## FD sim/reco: TPC (HD 10kt, long-baseline)
 
@@ -29,11 +29,11 @@ As given in Paulucci's talk, the PD-focused view of the same FD sim/reco chain:
 | Reco1 | `standard_reco1_dune10kt.fcl` | `gaushit`, `spsolve`, `hitfd` (TPC side), `opdec`, `ophit` |
 | Reco2 | `standard_reco2_dune10kt.fcl` | TPC modules, `opflash`, `opslicer`, `flashmatch` |
 
-**Discrepancy between the two source decks, flagged rather than resolved:** Chappell's talk names `standard_detsim_dune10kt.fcl` for the Reco2 stage; Paulucci's talk names `standard_reco2_dune10kt.fcl` for the same stage. Both decks are primary sources from the same working group, dated 2026-08-10 and presenting companion views of the same chain. This should be checked against the actual `dunesw` FHiCL files before treating either name as authoritative for a migration task.
+The source decks disagree on Reco2: Chappell's talk names `standard_detsim_dune10kt.fcl` for the Reco2 stage; Paulucci's talk names `standard_reco2_dune10kt.fcl` for the same stage. Both decks are primary sources from the same working group, dated 2026-08-10 and presenting companion views of the same chain. This should be checked against the actual `dunesw` FHiCL files before treating either name as authoritative for a migration task.
 
-## What this makes concrete for a first de-artify task
+## Candidate first migration
 
-Chappell's own prioritization proposal (see the [FD TPC page](subsystems/fd-tpc.md)) names a specific entry point: start at `gaushit` and work outward through `spsolve`, `hitfd`, `pandora`, `pandoracalo`, `pandorapid`, `energyrec*`, using pre-existing `art` files as input. This is the one candidate starting point in the source material that is both concrete (named FHiCL stage, named producers) and chosen to enable early comparison with LArSoft output.
+Chappell's own prioritization proposal (see the [FD TPC page](subsystems/fd-tpc.md)) names a specific entry point: start at `gaushit` and work outward through `spsolve`, `hitfd`, `pandora`, `pandoracalo`, `pandorapid`, `energyrec*`, using pre-existing `art` files as input. This would allow early comparison with LArSoft output if Phlex/FORM can read the required inputs.
 
 For the migration itself, follow the Phlex developers' [*Migrating to Phlex*](https://framework-r-d.github.io/phlex-examples/) guide. Its worked example is `GausHitFinder`, the module behind the `gaushit` producer, so this entry point matches the guide directly.
 

@@ -1,6 +1,6 @@
 # FD sim/reco: TPC
 
-Owner: Andy Chappell (Warwick). Explicitly scoped as the TPC half of the FD talk pairing; the PDS half is covered separately.
+Presenter: Andy Chappell (Warwick). Explicitly scoped as the TPC half of the FD talk pairing; the PDS half is covered separately.
 
 ## Configurations and geometries
 
@@ -32,7 +32,7 @@ Baseline: Run to Subrun to Spill to APA. Three extensions proposed for the tempo
 
 Trigger handling is raised as an open question, possibly treated the same way as supernova bursts by searching through trigger records.
 
-This is the first primary-source FD-TPC hierarchy proposal ingested into this documentation. See [Candidate hierarchy patterns](../hierarchy-model.md) for how the proposal compares with the other workflow presentations.
+See [Candidate hierarchy patterns](../hierarchy-model.md) for how the proposal compares with the other workflow presentations.
 
 ## Open problems
 

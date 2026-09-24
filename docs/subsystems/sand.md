@@ -1,6 +1,6 @@
 # ND sim/reco: SAND
 
-Owner: Valerio Pia, presenting on behalf of the SAND sim/reco and physics group.
+Presenter: Valerio Pia, presenting on behalf of the SAND sim/reco and physics group.
 
 ## Workflow
 
@@ -12,7 +12,7 @@ SAND shares its upstream chain with ND-LAr+TMS: GENIE (neutrino interaction gene
 
 Built to replace the earlier near-monolithic `sandreco` code, which was hard to test and develop, and whose data structures fit poorly with CAF-filling and full-spill or truth matching. μfw's design goal moves complexity into the framework engine and data structures, away from the algorithm and configuration layer, so junior developers writing algorithms don't need to touch the framework's internals. Each μfw process implements a constructor (sets inputs and outputs), a `configure` method (reads JSON), and a `run` method.
 
-Stated directly on the source deck: **modules run sequentially, with no possibility to iterate or have complex dependencies between modules.** This is the same batch-only constraint the rest of the ND and FD chains have, here surfacing one layer below the top-level production model, inside a framework that isn't `art` at all.
+The source deck states that μfw modules run sequentially, without iteration or complex dependencies between modules. This is a constraint within μfw; it should be assessed separately from the batch sequencing of the full ND production chain.
 
 Docs: [μfw wiki](https://baltig.infn.it/dune/ufw/-/wikis/home), [μfw indico talk](https://indico.fnal.gov/event/70441/). Deployment environment: [sand-ci](https://baltig.infn.it/dune/sand-ci). Not-yet-complete Doxygen reference: [sandreco-experimental](https://sandreco-experimental-182e2b.baltig-pages.infn.it/).
 
@@ -41,6 +41,6 @@ The direct fast-reco path from Spill straight to CAF is the stated end goal and 
 
 No migration plan has been discussed yet. One floated possibility: migrate a simplified, start-to-end version (v1.1) first, purely to learn Phlex and see how μfw's modules translate. The ND steps upstream of SAND (GENIE, edep-sim) need migrating eventually too, but SAND could proceed in parallel using edep-sim files already produced by the existing ND pipeline.
 
-**Stated biggest concern: personpower, not technical design.** The team is already fully committed to algorithm and analysis implementation, and it is unclear how a Phlex migration fits onto that list. This is a different kind of blocker from the associations and hierarchy-design gaps other subsystems have raised, and needs a different kind of response: staffing and timeline, not framework design.
+The presentation identifies staffing as the main migration concern: the team is already committed to algorithms and analysis. A migration plan needs an agreed allocation of effort and a schedule.
 
 Source: Pia, Phlex Adoption WG, 2026-08-24.

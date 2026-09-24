@@ -20,11 +20,11 @@ FORM is the I/O layer designed for Phlex. The CHEP 2026 source describes three l
 
 The planned storage roles are RNTuple for standard reconstruction files, HDF5 for DAQ and ML workflows, and TTree for legacy or debugging use. Persistent references between data products are listed as a FORM milestone, alongside metadata and concurrent reading/writing.
 
-This matters to migration sequencing. Reading an existing `art` file is not enough by itself to guarantee backward compatibility: the test must cover required product dictionaries, provenance, identity, associations, and the FORM/Phlex version used for the comparison.
+Reading an existing `art` file is not enough by itself to guarantee backward compatibility: the test must cover required product dictionaries, provenance, identity, associations, and the FORM/Phlex version used for the comparison.
 
 ## Association requirement classes in the workflow sources
 
-The presentations expose a shared theme, but not four identical problems:
+The presentations describe four association requirements:
 
 | Workflow scope | Requirement class | Example |
 |---|---|---|
@@ -37,7 +37,7 @@ A framework solution must therefore be tested for one-to-one, one-to-many, many-
 
 ## Candidate persistent representation
 
-Brett Viren's data-model follow-up gives one concrete representation worth testing: products and their relationships as explicit tables, for example `tracks`, `hits`, and `track_hit_assns(track_id, hit_id, metadata...)`. The attraction is consistent transient and persisted logical columns across Arrow and FORM/RNTuple. The open test is whether joins, reverse lookup, and multi-hop navigation remain ergonomic enough for reconstruction users.
+Brett Viren's data-model follow-up gives one concrete representation worth testing: products and their relationships as explicit tables, for example `tracks`, `hits`, and `track_hit_assns(track_id, hit_id, metadata...)`. The proposal would use consistent logical columns in memory and in Arrow and FORM/RNTuple storage. The open test is whether joins, reverse lookup, and multi-hop navigation remain ergonomic enough for reconstruction users.
 
 This is a candidate, not an adopted design. The Framework-R-D design discussion is also exploring associations as first-class data products rather than hierarchy nodes.
 

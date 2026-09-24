@@ -6,7 +6,7 @@ title: "Ecosystem: dune-xerosere"
 
 Status: pathfinder evidence, not a DUNE endorsement. Last verified against the project report and follow-ups from 2026-07-08 to 2026-07-13.
 
-`dune-xerosere` is an umbrella development environment, built by Brett Viren, for growing a DUNE-specific software ecosystem around Phlex. It is the clearest concrete DUNE Phlex adoption effort to date: it wires major DUNE workflow ingredients into Phlex while deliberately keeping packages factored enough that DUNE is not forced into a single monolithic ecosystem decision.
+`dune-xerosere` is an umbrella development environment built by Brett Viren for DUNE software using Phlex. It connects Wire-Cell, edep-sim, DAQ input, configuration, and I/O through separately developed packages.
 
 ## Why it exists
 
@@ -20,7 +20,7 @@ Phlex is young, and on its own it lacks enough DUNE-specific algorithms, service
 - Use modern CMake and Spack layering.
 - Solve DUNE-specific problems through general packages where possible.
 - Avoid overlap and avoid systematic lock-in.
-- Use LLMs for velocity while preserving human quality control.
+- Review and test LLM-assisted contributions.
 
 ## Umbrella layout
 
@@ -31,11 +31,11 @@ Phlex is young, and on its own it lacks enough DUNE-specific algorithms, service
 - `builds/envs/<env>/<package>/` for build outputs.
 - `installs/envs/<env>/{bin,lib,include}` for installed outputs.
 
-The packages developed inside `dune-xerosere` are intended to remain independent of it. The umbrella is a catalyst for development, not a runtime requirement for the packages it produces.
+Packages developed inside `dune-xerosere` are intended to remain independently usable, without the umbrella environment at runtime.
 
-## Current package scope
+## Package scope in the July 2026 report
 
-The package graph groups around several areas, all under active development:
+The report groups the packages into these areas:
 
 - **DUNE configuration**: `dune_config`.
 - **DUNE DAQ data ingress**: `dune_daq_codec`, `dune_daq_types`, `dune_daq_hdf`, `dune_daq_arrow_frame_hdf`.
@@ -46,9 +46,9 @@ The package graph groups around several areas, all under active development:
 
 Major external or adjacent pieces include the Wire-Cell Toolkit, Phlex itself, EDepSim, Simphony, Geant4, ROOT, Arrow, HDF5, Jsonnet, Boost, Python, TBB, and Perfetto.
 
-## What actually works today
+## Reported working components (July 2026)
 
-DUNE-specific Phlex payloads currently exist for:
+The report describes DUNE-specific Phlex payloads for:
 
 - Wire-Cell Toolkit simulation and signal processing.
 - edep-sim Geant4 simulation.
@@ -60,7 +60,7 @@ DUNE-specific Phlex payloads currently exist for:
 
 This is a trial, not a DUNE-wide decision. Whether Arrow becomes the recommended in-memory representation for DUNE Phlex work, or stays scoped to the producers and consumers that already use it, is still an open question for the Phlex Adoption Working Group.
 
-The strongest recorded counterargument is that the number of major producers and consumers may be small enough that pairwise converters are manageable. That makes the real evaluation question empirical: for the workflows DUNE expects in 2026-2027, does a shared Arrow schema remove more complexity than it introduces? A middle path remains plausible, using general struct-like products where they work and converters where they do not.
+The evaluation needs real producer and consumer counts: does a shared Arrow schema reduce conversion work enough to justify its complexity? Struct-like products and explicit converters remain alternatives.
 
 ## Configuration
 
@@ -68,14 +68,14 @@ Configuration is a second major theme in the project. `dune_config` uses Jsonnet
 
 ## Phlex issues surfaced by this work
 
-Because `dune-xerosere` exercises real DUNE boundary conditions (DAQ data, Wire-Cell, Geant4/edep-sim, configuration, file I/O, package management), it has surfaced concrete Phlex framework issues useful to anyone else adopting Phlex early:
+The July report identifies Phlex issues encountered with DAQ data, Wire-Cell, Geant4/edep-sim, configuration, I/O, and package management:
 
 - Phlex v0.2.0 had no supported way to create a provider without reaching into `phlex::internal` namespaces. v0.3.0 changed that API, with expected churn for anyone who had worked around it the same way.
 - Phlex v0.3.0's sources helped, but had residual namespace issues and one missing header; reported fixed in v0.3.1.
 - Phlex v0.3.0 was missing `find_dependency()` CMake calls, which forced downstream code to declare Phlex's own dependencies explicitly; reported fixed in v0.3.1.
 - FORM in v0.2.0 had a lossy `to_string()` implementation for data-cell indices, which blocked clean HDF5 round-tripping. v0.3.0 fixed the lossiness but retrieving full index information is still awkward.
 
-Features anticipated but not yet available: `resource` support for Wire-Cell wires, non-wire geometry, and online/offline channel maps; `translator` auto-engagement of data converters, replacing today's explicit conversion nodes; and `preserver` support for writing objects outside the older output-module model.
+Features requested in the July report: `resource` support for Wire-Cell wires, non-wire geometry, and online/offline channel maps; `translator` auto-engagement of data converters, replacing today's explicit conversion nodes; and `preserver` support for writing objects outside the older output-module model.
 
 ## Open pathfinder work
 
@@ -90,10 +90,6 @@ The source report lists material work still needed before the package graph shou
 - identify which packages are independently buildable, maintained, tested, and ready for contributors other than the original developer.
 
 A useful adoption artifact would be a package test matrix recording owner, maturity, dependencies, independently reproduced build, supported workflow, and whether the package or design choice is endorsed.
-
-## How to read this project
-
-`dune-xerosere` is a pathfinder, not a mandate. Its value is in exposing integration pressure early, before DUNE commits to a single Phlex-native ecosystem design. Its package factoring is a feature, not an accident: it lets DUNE adopt useful individual pieces without ratifying every design choice made along the way. Evidence that Phlex can host meaningful DUNE components does not, by itself, mean DUNE should endorse Arrow, HDF5, Jsonnet, or the full package graph as the official development environment. Those remain separate, open decisions for the Phlex Adoption Working Group.
 
 ## See also
 

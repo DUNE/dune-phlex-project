@@ -2,7 +2,7 @@
 
 Last verified: 2026-08-26. Repository names and content state are time-sensitive and should be rechecked before publication updates.
 
-The Phlex framework itself is developed under the `Framework-R-D` GitHub organization. DUNE-specific subsystem code lives under the `DUNE` organization. As of 2026-08-26, every DUNE-org repo below is code-only, with no narrative documentation of its own, which is exactly the gap this site exists to fill.
+The Phlex framework is developed under the `Framework-R-D` GitHub organization. The DUNE repositories listed below are intended to host subsystem and shared code. Their implementation status is summarized at the end of this page.
 
 ## The framework
 
@@ -15,7 +15,7 @@ The Phlex framework itself is developed under the `Framework-R-D` GitHub organiz
 | [Framework-R-D/phlex-examples](https://github.com/Framework-R-D/phlex-examples) | Example Phlex applications and plugins, and the source of the [*Migrating to Phlex*](https://framework-r-d.github.io/phlex-examples/) guide (`migration/doc/`, worked example in `migration/gauss_hit_finder/`). |
 | [Framework-R-D/phlex-spack-recipes](https://github.com/Framework-R-D/phlex-spack-recipes) | Spack build recipes for Phlex and its dependencies. For DUNE's Spack setup, see the [DUNE Spack Project](https://dune.github.io/dune-spack-project/). |
 
-These repos cover the framework itself: how Phlex works and how to build it. They are not where DUNE-subsystem workflow content belongs, which is the role this repository (`dune-phlex-project`) and the DUNE-org subsystem repos below play instead.
+These repositories contain framework design, implementation, examples, and build support. DUNE workflow documentation is collected on this site.
 
 ## ND subsystem repos (DUNE org)
 
