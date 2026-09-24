@@ -8,7 +8,7 @@ See [Candidate hierarchy patterns](../hierarchy-model.md) for evidence-qualified
 
 ## Coverage
 
-| Subsystem | Owner | Primary source | Status |
+| Workflow | Presenter | Primary source | Status |
 |---|---|---|---|
 | [protoDUNE](protodune.md) | Jake Calcutt | Data Hierarchy Discussion, 2026-06-15 | Data-hierarchy discussion only, no full production-chain deck |
 | [ND prototypes](nd-prototypes.md) | Sindhu Kumaran | ND Prototypes Data Hierarchy, 2026-06-15 | 4-slide breakout deck |

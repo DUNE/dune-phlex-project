@@ -1,6 +1,6 @@
 # ND sim/reco: ND-LAr+TMS
 
-Owner: Charlotte Knight. The most detailed production-chain map of any subsystem documented here: 30 slides walking the full pre-Phlex ND production chain as it exists in the `ND_Production` repository.
+Presenter: Charlotte Knight. The 30-slide presentation describes the pre-Phlex ND production chain in `ND_Production` as of 2026-08-24.
 
 ## Workflow
 
@@ -22,7 +22,7 @@ Two hierarchies unfold independently in parallel from Run, Subrun, Spill, and on
 
 A final transform, marked "unsure" on the source deck, stitches NDLAr tracks and interactions to TMS tracks. Today's workflow has no clean, framework-native way to associate across the two independently-unfolded hierarchies; it is glued together ad hoc inside CAFmaker.
 
-## Why this matters for Phlex
+## Phlex requirements
 
 Phlex's runtime-defined data-layer DAG can represent the NDLAr and TMS branches without forcing them into one fixed Run/Subrun/Event structure. A Window higher-order function may help an algorithm operate over adjacent data cells, but it is not a general replacement for persistent associations or arbitrary cross-layer relationships. The TMS-to-NDLAr match therefore tests two separate needs: scheduling the matching algorithm with the right inputs, and representing its output relationships persistently through FORM. See [Candidate hierarchy patterns](../hierarchy-model.md) and [I/O, persistence, and associations](../io-persistence.md).
 
@@ -30,7 +30,7 @@ Phlex's runtime-defined data-layer DAG can represent the NDLAr and TMS branches 
 
 Two candidate migration starting points, floated without a firm recommendation: start with **ndlar-flow** (possibly a simple translation from `h5flow`, and a good test of Phlex's Python integration), or start from **GENIE** and work forward (earlier stages are less complex).
 
-The deck also raises a recurring Adoption Working Group theme directly: "I struggle to see the larger vision. Is the idea that the whole ND Sim/Reco workflow should be merged into one Phlex workflow? What are the great advantages of using Phlex?" This is a documentation gap more than a technical blocker, and part of the motivation for this site.
+The presentation asks whether the full ND sim/reco chain should become one Phlex workflow and what benefits that would provide. The migration plan needs to answer both questions for the chosen workflow.
 
 Some undocumented in-development stages in the deck were reverse-engineered from the repositories rather than confirmed with the developers directly; treat those details as representative for migration discussion rather than authoritative.
 

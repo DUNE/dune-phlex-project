@@ -1,6 +1,6 @@
 # protoDUNE
 
-Owner: Jake Calcutt. Repos: `dune-pdhd`, `dune-pdsp`, `dune-pdvd` (HD, SP, VD readout variants), `dune-iceberg`, plus the pre-Phlex `protoduneana`, `p3s`, `protodune-metadex`, `protodune_beam`.
+Presenter: Jake Calcutt. Repos: `dune-pdhd`, `dune-pdsp`, `dune-pdvd` (HD, SP, VD readout variants), `dune-iceberg`, plus the pre-Phlex `protoduneana`, `p3s`, `protodune-metadex`, `protodune_beam`.
 
 protoDUNE has no full step-by-step production-chain deck yet. Four of the other workflow scopes do; ND prototypes likewise has only a short hierarchy overview. What exists for protoDUNE is a data-hierarchy discussion (Calcutt, Phlex Adoption WG, 2026-06-15) that grounds DAQ terminology and documents the current offline object chain.
 
@@ -34,9 +34,9 @@ Reco1, TPC: `Wire` (deconvolved signal regions of interest) to `Hit` (Gaussian b
 
 Reco1, PDS: `OpWaveform` (deconvolved) to `OpHit` (localized signal) to `OpFlash` (group of OpHits).
 
-## The Brett Viren principle
+## Algorithm requirements
 
-Relayed directly: different algorithms require different hierarchy layers, so algorithms need to be defined first to determine the hierarchy. Higher-order functions (fold and unfold) work through those layers, and algorithms connect at the edges through them. Designing a data hierarchy requires an end-to-end view of the processing chain, not a hierarchy chosen up front and imposed on the algorithms.
+The presentation cites Brett Viren’s argument that different algorithms require different hierarchy layers, so algorithms need to be defined first to determine the hierarchy. Higher-order functions (fold and unfold) work through those layers, and algorithms connect at the edges through them. Designing a data hierarchy requires an end-to-end view of the processing chain, not a hierarchy chosen up front and imposed on the algorithms.
 
 ## Open gap
 

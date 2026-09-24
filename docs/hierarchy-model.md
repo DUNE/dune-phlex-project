@@ -2,7 +2,7 @@
 
 Status: working synthesis, not a ratified DUNE data model. Last verified: 2026-08-26.
 
-The six workflow presentations show a **family resemblance**, not one isomorphic tree. They repeatedly need bookkeeping scope, a bounded unit of processing, detector-specific branches, and relationships between derived products. The source decks disagree, or do not yet speak, about the exact topology and vocabulary.
+The six workflow presentations share bookkeeping, bounded processing units, detector branches, and relationships between products. Their proposed topologies and terminology differ, and some choices remain unaddressed.
 
 The six pages are also workflow presentation scopes rather than six independent detector subsystems. FD TPC and FD PDS are companion views of one production chain; ND prototypes and full ND reuse parts of the same hierarchy; protoDUNE and SAND begin from different operational assumptions. The mappings below are therefore marked as direct evidence, inherited context, inference, or unaddressed.
 
@@ -17,7 +17,7 @@ The six pages are also workflow presentation scopes rather than six independent 
 
 ## Recurring roles
 
-The sources repeatedly expose these roles without proving that each role must be a first-class layer everywhere:
+The sources use these roles; whether each needs a framework data layer remains open:
 
 - **Operational scope**: DAQ session, partition, run, and subrun.
 - **Bounded processing unit**: Trigger Record, Spill, Event, Frame, or Time slice.
@@ -77,7 +77,7 @@ graph TD
     BURST_FRAMES --> BURST_SLICE["Optional algorithmic Slice"]
 ```
 
-Frame is not silently substituted for Trigger Record or Spill here. Whether they are separate layers, alternate configurations, or mappings of one framework concept remains a design question.
+Whether Frame, Trigger Record, and Spill are separate layers, alternate configurations, or mappings of one framework concept remains a design question.
 
 ## Pattern 4: simulation Timespan and Origins
 
@@ -91,7 +91,7 @@ graph TD
     SIGNAL --> TR
 ```
 
-This source is a direct counterexample to a universal Run/Subrun/window tree and should remain visible in any baseline design exercise.
+An executable simulation example needs to test these cross-window and cross-run relationships.
 
 ## Mapping the workflow presentations
 
@@ -104,7 +104,7 @@ This source is a direct counterexample to a universal Run/Subrun/window tree and
 | FD TPC | Run and Subrun | Spill baseline; proposed Frame/SN Burst/Slice extensions | APA and reconstruction products | Baseline and extensions **explicit proposals**, not adopted structure |
 | FD PDS | Companion FD chain | Event-level, per-channel and per-time-slice products | Optical detector products | FD bookkeeping **inherited** from the companion TPC talk; no independent hierarchy proposal |
 
-## Associations are relationships, not a hierarchy layer
+## Association requirements
 
 Four workflow presentations surface association-related needs, but they occur at different stages and require different semantics:
 

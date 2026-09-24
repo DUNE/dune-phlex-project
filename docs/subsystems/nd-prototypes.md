@@ -1,6 +1,6 @@
 # ND prototypes
 
-Owner: Sindhu Kumaran. Covers the 2x2 Demonstrator, MINERvA-in-2x2, and ArgonCube LUT simulation, a distinct scope from the full ND-LAr+TMS and SAND workflows. Repos: `2x2_sim`, `2x2_cosmics`, `mx2-online`, `ArgonCubeLUTSim`, `ndlar_39Ar_reco` (radiological background studies), `SlowControls2x2`.
+Presenter: Sindhu Kumaran. Covers the 2x2 Demonstrator, MINERvA-in-2x2, and ArgonCube LUT simulation, a distinct scope from the full ND-LAr+TMS and SAND workflows. Repos: `2x2_sim`, `2x2_cosmics`, `mx2-online`, `ArgonCubeLUTSim`, `ndlar_39Ar_reco` (radiological background studies), `SlowControls2x2`.
 
 This is a 4-slide breakout deck, the shortest primary source in this documentation set. It documents the current data hierarchy and asks whether it extends to full ND, rather than walking a full production chain.
 
